@@ -50,6 +50,10 @@
         color: rgba(22, 24, 35, 0.7);
     }
 
+    input:not(:placeholder-shown) ~ .status .clear {
+        display: block;
+    }
+
     &::after {
         content: '';
         position: absolute;
@@ -81,7 +85,8 @@
         color: rgba(22, 24, 35, 0.5);
     }
 
-    .loading {
+    .loading,
+    .clear {
         display: none;
     }
 }
