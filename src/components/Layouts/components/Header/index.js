@@ -14,10 +14,11 @@ function Header() {
                 </div>
                 <div className={cx('search')}>
                     <input placeholder="Search accounts and videos" spellCheck={false} />
-                    <button className={cx('clear')}>
-                        <FontAwesomeIcon icon={faCircleXmark} />
+                    <button className={cx('status')}>
+                        <FontAwesomeIcon className={cx('clear')} icon={faCircleXmark} />
+                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
                     </button>
-                    <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
+
                     <button className={cx('search-btn')}>
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                     </button>
