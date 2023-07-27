@@ -3,6 +3,7 @@
 
 :root {
     --primary: #fe2c55;
+    --while: #fff;
     --text-color: #000;
 
     //Defaut layout
@@ -34,7 +35,7 @@ input,
     border: none;
 }
 
-a[href] {
+a {
     color: var(--text-color);
     text-decoration: none;
 }
