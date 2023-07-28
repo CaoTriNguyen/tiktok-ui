@@ -142,3 +142,13 @@
 .custom-login {
     cursor: pointer;
 }
+
+.more-btn {
+    font-size: 1.8rem;
+    margin-left: 28px;
+    background: #fff;
+    padding: 2px 8px;
+    &:hover {
+        cursor: pointer;
+    }
+}
