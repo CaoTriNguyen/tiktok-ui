@@ -15,6 +15,7 @@
 .inner {
     height: 100%;
     width: var(--default-layout-width, 1150px);
+    padding: 0 var(--default-layout-horizontal-spacer);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -137,18 +138,18 @@
     button + button {
         margin-left: 5px;
     }
+
+    .more-btn {
+        font-size: 1.8rem;
+        margin-left: 28px;
+        background: #fff;
+        padding: 2px 8px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 .custom-login {
     cursor: pointer;
-}
-
-.more-btn {
-    font-size: 1.8rem;
-    margin-left: 28px;
-    background: #fff;
-    padding: 2px 8px;
-    &:hover {
-        cursor: pointer;
-    }
 }
