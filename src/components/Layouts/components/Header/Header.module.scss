@@ -172,6 +172,9 @@
 }
 
 .action-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.3rem;
     background-color: transparent;
     color: rgba(22, 24, 35, 0.5);
