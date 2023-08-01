@@ -153,3 +153,32 @@
 .custom-login {
     cursor: pointer;
 }
+
+//Actions
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    font-size: 1.4rem;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    margin-left: 12px;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 999px;
+}
+
+.action-btn {
+    font-size: 1.3rem;
+    background-color: transparent;
+    color: rgba(22, 24, 35, 0.5);
+    padding: 4px 12px;
+
+    &:hover {
+        cursor: pointer;
+        color: rgba(22, 24, 35, 0.8);
+    }
+}

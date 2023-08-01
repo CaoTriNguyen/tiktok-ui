@@ -4,7 +4,7 @@
 :root {
     --primary: #fe2c55;
     --while: #fff;
-    --text-color: #000;
+    --text-color: rgba(22, 24, 35);
 
     //Defaut layout
     --default-layout-header-height: 60px;
@@ -39,4 +39,27 @@ input,
 a {
     color: var(--text-color);
     text-decoration: none;
+}
+
+//Custom tippy tooltip
+body {
+    .tippy-box {
+        border-radius: 8px;
+        font-weight: 550;
+        font-size: 1rem;
+        line-height: 1.6rem;
+        background-color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tippy-content {
+        padding: 8px 9px;
+    }
+
+    .tippy-box[data-placement^='bottom'].tippy-arrow::before {
+        top: -8px;
+    }
 }

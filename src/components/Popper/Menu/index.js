@@ -39,6 +39,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
             interactive
             animation={false}
             delay={[0, 200]}
+            offset={[12, 8]}
             placement="bottom-end"
             render={(attrs) => (
                 <PopperWrapper className={cx('menu-popper')}>
