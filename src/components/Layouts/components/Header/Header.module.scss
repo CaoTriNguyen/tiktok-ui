@@ -24,105 +24,10 @@
 .logo {
     display: flex;
     justify-content: center;
-}
-
-.search,
-.search-result {
-    width: 361px;
-    font-size: var(--search-font-size-text);
-}
-
-.search {
-    position: relative;
-    width: 361px;
-    height: var(--search-height);
-    padding-left: 16px;
-    background-color: rgba(22, 24, 35, 0.06);
-    border-radius: var(--search-border-radius);
-    display: flex;
-    align-items: center;
-    border: 1.5px solid rgba(22, 24, 35, 0);
-
-    input {
-        height: 100%;
-        color: var(--text-color);
-        font-size: var(--search-font-size-text);
-        caret-color: red;
-        border: none;
-        outline: none;
-        background-color: transparent;
-        flex: 1;
-    }
-
-    input:not(:placeholder-shown) ~ .search-btn {
-        color: rgba(22, 24, 35, 0.7);
-    }
-
-    input:not(:placeholder-shown) ~ .status .clear {
-        display: block;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: var(--search-top-space);
-        right: var(--search-button-width);
-        height: calc(var(--search-height) - var(--search-top-space) * 2);
-        width: 1px;
-        background-color: rgba(22, 24, 35, 0.12);
-    }
-
-    &:focus-within {
-        border-color: rgba(22, 24, 35, 0.2);
-    }
-}
-
-.status {
-    //position: absolute;
-    height: calc(var(--search-font-size-icon) * 0.7);
-    margin: 0px 12px;
-    color: rgba(22, 24, 35, 0.2);
-    font-size: calc(var(--search-font-size-icon) * 0.7);
 
     &:hover {
         cursor: pointer;
-        color: rgba(22, 24, 35, 0.4);
     }
-
-    &:active {
-        color: rgba(22, 24, 35, 0.5);
-    }
-
-    .loading,
-    .clear {
-        display: none;
-    }
-}
-
-.search-btn {
-    width: 51px;
-    height: 100%;
-    color: #ccc;
-    background-color: initial;
-    font-size: var(--search-font-size-icon);
-    border-top-right-radius: var(--search-border-radius);
-    border-bottom-right-radius: var(--search-border-radius);
-
-    &:hover {
-        background-color: rgba(22, 24, 35, 0.03);
-        cursor: pointer;
-    }
-
-    &:active {
-        background-color: rgba(22, 24, 35, 0.06);
-    }
-}
-
-.search-title {
-    padding: 5px 12px;
-    font-size: var(--search-font-size-text);
-    font-weight: 600;
-    color: rgba(22, 24, 35, 0.5);
 }
 
 .actions {
@@ -162,26 +67,44 @@
 
 .user-avatar {
     font-size: 1.4rem;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     object-fit: cover;
-    margin-left: 12px;
+    margin-left: 17px;
     background-color: transparent;
     cursor: pointer;
     border-radius: 999px;
 }
 
 .action-btn {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.3rem;
     background-color: transparent;
-    color: rgba(22, 24, 35, 0.5);
+    color: rgba(22, 24, 35, 0.8);
     padding: 4px 12px;
+
+    .message {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 20px;
+        width: 30px;
+        background-color: rgb(218, 52, 52);
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #fff;
+        padding: 0px;
+        top: -5px;
+        right: -5px;
+        border-radius: 15px;
+    }
 
     &:hover {
         cursor: pointer;
-        color: rgba(22, 24, 35, 0.8);
     }
 }
