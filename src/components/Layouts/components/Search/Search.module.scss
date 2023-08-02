@@ -1,0 +1,98 @@
+.search,
+.search-result {
+    width: 361px;
+    font-size: var(--search-font-size-text);
+}
+
+.search {
+    position: relative;
+    width: 361px;
+    height: var(--search-height);
+    padding-left: 16px;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: var(--search-border-radius);
+    display: flex;
+    align-items: center;
+    border: 1.5px solid rgba(22, 24, 35, 0);
+
+    input {
+        height: 100%;
+        color: var(--text-color);
+        font-size: var(--search-font-size-text);
+        caret-color: red;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        flex: 1;
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: rgba(22, 24, 35, 0.7);
+    }
+
+    input:not(:placeholder-shown) ~ .status .clear {
+        display: block;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: var(--search-top-space);
+        right: var(--search-button-width);
+        height: calc(var(--search-height) - var(--search-top-space) * 2);
+        width: 1px;
+        background-color: rgba(22, 24, 35, 0.12);
+    }
+
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+}
+
+.status {
+    //position: absolute;
+    height: calc(var(--search-font-size-icon) * 0.7);
+    margin: 0px 12px;
+    color: rgba(22, 24, 35, 0.2);
+    font-size: calc(var(--search-font-size-icon) * 0.7);
+
+    &:hover {
+        cursor: pointer;
+        color: rgba(22, 24, 35, 0.4);
+    }
+
+    &:active {
+        color: rgba(22, 24, 35, 0.5);
+    }
+
+    .loading,
+    .clear {
+        display: none;
+    }
+}
+
+.search-btn {
+    width: 51px;
+    height: 100%;
+    color: #ccc;
+    background-color: initial;
+    font-size: var(--search-font-size-icon);
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+    }
+
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+}
+
+.search-title {
+    padding: 5px 12px;
+    font-size: var(--search-font-size-text);
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
+}
