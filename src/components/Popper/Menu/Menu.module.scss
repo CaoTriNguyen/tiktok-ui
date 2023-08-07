@@ -1,5 +1,17 @@
 .menu-list {
+    display: flex;
+    flex-direction: column;
     width: 260px;
+    overflow-y: hidden;
+}
+
+.menu-popper {
+    padding-bottom: 8px;
+}
+
+.menu-body {
+    overflow-x: hidden;
+    overflow-y: auto;
 
     //Menu item
     .menu-item {
@@ -23,13 +35,10 @@
     }
 }
 
-.menu-popper {
-    padding-bottom: 8px;
-}
-
 //Header
 .header {
     display: flex;
+    flex-shrink: 0;
     position: relative;
     height: 50px;
     margin-top: -8px;

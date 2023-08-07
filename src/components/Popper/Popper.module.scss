@@ -7,9 +7,11 @@
     overflow: hidden;
 
     .content {
+        display: flex;
+        flex-direction: column;
         max-height: min((100vh - 96px) - 60px, 734px);
         min-height: 100px;
         padding-top: 8px;
-        overflow-y: auto;
+        overflow: hidden;
     }
 }
