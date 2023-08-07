@@ -3,6 +3,8 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+
+import * as searchsServices from '~/apiServices/searchServices';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
@@ -26,17 +28,24 @@ function Search() {
             return;
         }
 
-        setLoading(true);
+        // fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
+        //     .then((res) => res.json())
+        //     .then((res) => {
+        //         setSeachResult(res.data);
+        //         setLoading(false);
+        //     })
+        //     .catch(() => {
+        //         setLoading(false);
+        //     });
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                setSeachResult(res.data);
-                setLoading(false);
-            })
-            .catch(() => {
-                setLoading(false);
-            });
+        const fetchApi = async () => {
+            setLoading(true);
+            const result = await searchsServices.search(debounced);
+            setSeachResult(result);
+            setLoading(false);
+        };
+
+        fetchApi();
     }, [debounced]);
 
     const handleClearInput = () => {
