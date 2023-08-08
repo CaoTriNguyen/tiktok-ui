@@ -50,7 +50,7 @@ const MENU_ITEMS = [
     },
     {
         icon: <FontAwesomeIcon icon={faKeyboard} />,
-        title: 'Keyboard shutcuts',
+        title: 'Keyboard shortcuts',
     },
 ];
 
