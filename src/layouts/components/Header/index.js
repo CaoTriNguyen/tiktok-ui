@@ -13,6 +13,7 @@ import {
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
 
+import config from '~/config';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import Button from '~/components/Bottom';
@@ -20,6 +21,7 @@ import Menu from '~/components/Popper/Menu';
 import { MessageIcon, UploadIcon, InboxIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
+import { Link } from 'react-router-dom';
 
 const MENU_ITEMS = [
     {
@@ -94,7 +96,9 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={images.logo} alt="" />
+                    <Link to={config.routes.home} className={cx('logo-link')}>
+                        <img src={images.logo} alt="Tiktok" />
+                    </Link>
                 </div>
                 {/* Search box */}
                 <Search />
