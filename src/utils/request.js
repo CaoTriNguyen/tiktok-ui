@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-//process.env.REACT_APP_BASE_URL is Environment variable
+//process.env is Environment variable
 const request = axios.create({
     baseURL: process.env.REACT_APP_BASE_URL,
 });

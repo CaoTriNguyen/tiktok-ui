@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-import * as searchsServices from '~/services/searchServices';
+import * as searchServices from '~/services/searchServices';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
@@ -15,8 +15,8 @@ const cx = classNames.bind(styles);
 
 function Search() {
     const [searchValue, setSearchValue] = useState('');
-    const [searchResult, setSeachResult] = useState([]);
-    const [forcus, setForcus] = useState(false);
+    const [searchResult, setSearchResult] = useState([]);
+    const [focus, setFocus] = useState(false);
     const [loading, setLoading] = useState(false);
 
     const debounced = useDebounce(searchValue, 500);
@@ -24,14 +24,14 @@ function Search() {
 
     useEffect(() => {
         if (!debounced.trim()) {
-            setSeachResult([]);
+            setSearchResult([]);
             return;
         }
 
         // fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
         //     .then((res) => res.json())
         //     .then((res) => {
-        //         setSeachResult(res.data);
+        //         setSearchResult(res.data);
         //         setLoading(false);
         //     })
         //     .catch(() => {
@@ -40,8 +40,8 @@ function Search() {
 
         const fetchApi = async () => {
             setLoading(true);
-            const result = await searchsServices.search(debounced);
-            setSeachResult(result);
+            const result = await searchServices.search(debounced);
+            setSearchResult(result);
             setLoading(false);
         };
 
@@ -50,16 +50,16 @@ function Search() {
 
     const handleClearInput = () => {
         setSearchValue('');
-        setSeachResult([]);
+        setSearchResult([]);
         inputRef.current.focus();
     };
 
     const handleHideResult = () => {
-        setForcus(false);
+        setFocus(false);
     };
 
     const handleShowResult = () => {
-        setForcus(true);
+        setFocus(true);
     };
 
     return (
@@ -67,7 +67,7 @@ function Search() {
         <div>
             <HeadlessTippy
                 interactive
-                visible={forcus && searchResult.length > 0}
+                visible={focus && searchResult.length > 0}
                 render={(attrs) => (
                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                         <PopperWrapper>
