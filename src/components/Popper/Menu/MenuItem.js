@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import Button from '~/components/Bottom';
+import Button from '~/components/Button';
 import style from './Menu.module.scss';
 
 const cx = classNames.bind(style);
